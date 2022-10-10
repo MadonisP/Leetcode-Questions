@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 var isValid = function (s) {
-  if (s.length % 2 !== 0) return false;
+  if (s.length % 2 !== 0) return false; // verilen degerde bir dengesizlik var mi diye kontrol || cheking that is size balanced or not balanced
   const stack = [];
 
   for (let i = 0; i < s.length; i++) {
@@ -19,7 +19,8 @@ var isValid = function (s) {
         stack.push("}");
         break;
       default:
-        if (c !== stack.pop()) {
+        if (c !== stack.pop()) { //Burada C bize gelen deger stack pop ile pushladigimiz degeri karsilastiriyoruz eger tutmazsa false donuyor tutarsa true
+            // C is our first brackets we are pushing brackets into stack for each C brackets after that we are cheking with pop method like  
           return false;
         }
     }
