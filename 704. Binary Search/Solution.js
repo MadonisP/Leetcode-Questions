@@ -28,6 +28,8 @@ var search = function (nums, target) {
   return nums[lo] == target ? lo : -1; //looks in the middle first and reduce the half and this process continues || yarisini cikarir ve bu sekilde ayni isleme devam eder
 };
 
+// 2. yaklasim yanlislari cikardigi icin buyuk verilerde daha hizli bir arama saglar
+
 /* ----------------------------------------------------Question--------------------------------------------------------------*/
 
 /* Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums.
