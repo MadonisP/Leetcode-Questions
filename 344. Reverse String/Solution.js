@@ -1,3 +1,22 @@
+/**
+ * @param {character[]} s
+ * @return {void} Do not return anything, modify s in-place instead.
+ */
+ var reverseString = function (s) {
+    let p1 = 0;
+    let p2 = s.length - 1;
+
+    while (p1 < p2) {
+
+        let holder = s[p1];
+        s[p1] = s[p2];
+        s[p2] = holder;
+
+        p1++;
+        p2--;
+    }
+};
+
 /* ----------------------------------------------------Question--------------------------------------------------------------*/
 /* 
 Write a function that reverses a string. The input string is given as an array of characters s.
