@@ -3,19 +3,13 @@
  * @return {string}
  */
  var reverseWords = function(s) {
-    var myArr=s.split(' ')
-    var test=myArr[0].split("")
-    let p1=0
-    let p2=test.length-1
-    while(p1,p2){
-        let holder=test[p1]
-        test[p1]=test[p2]
-        test[p2]=holder
-
-        p1++
-        p2--
+    let arrStr = s.split(' ');
+    let result = [];
+    for (const item of arrStr) {
+        result.push(item.split('').reverse().join(''))
     }
-    return test.join('')
+
+    return result.join(' ');
 };
 
 /* ----------------------------------------------------Question--------------------------------------------------------------*/
