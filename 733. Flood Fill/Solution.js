@@ -1,3 +1,26 @@
+/**
+ * @param {number[][]} image
+ * @param {number} sr
+ * @param {number} sc
+ * @param {number} color
+ * @return {number[][]}
+ */
+ var floodFill = function (image, sr, sc, color) {
+    const currentColor = image[sr][sc]
+    if (color === currentColor) return image;
+
+    function call(img, r, c) {
+        if (r >= img.length || r < 0 || c >= img[0].length || c < 0 || (currentColor !== img[r][c])) return
+        img[r][c] = color
+        call(img, r - 1, c)
+        call(img, r + 1, c)
+        call(img, r, c - 1)
+        call(img, r - 1, c + 1)
+        return img
+    }
+    return call(image, sr, sc);
+};
+
 /* ----------------------------------------------------Question--------------------------------------------------------------*/
 
 /* 
