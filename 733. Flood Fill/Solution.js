@@ -15,7 +15,7 @@
         call(img, r - 1, c)
         call(img, r + 1, c)
         call(img, r, c - 1)
-        call(img, r - 1, c + 1)
+        call(img, r, c + 1)
         return img
     }
     return call(image, sr, sc);
