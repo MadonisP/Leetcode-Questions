@@ -1,3 +1,21 @@
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+ var maxAreaOfIsland = function (grid) {
+    let sum = 0, vertical = grid.length, horizontal = grid[0].length
+    const travel = (i, j) => {
+        if (i < 0 || j < 0 || i >= vertical || j >= horizontal || !grid[i][j]) return 0
+        grid[i][j] = 0
+        return 1 + travel(i - 1, j) + travel(i + 1, j) + travel(i, j - 1) + travel(i, j + 1)
+    }
+    for (let i = 0; i < vertical; i++)
+        for (let j = 0; j < horizontal; j++)
+            if (grid[i][j]) sum = Math.max(sum, travel(i, j))
+    return sum
+}
+
+
 /* ----------------------------------------------------Question--------------------------------------------------------------*/
 
 /* 
